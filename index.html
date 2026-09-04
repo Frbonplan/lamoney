@@ -16,8 +16,6 @@
       --text-main: #e5e7eb;
       --text-soft: #9ca3af;
       --border: #1f2937;
-      --danger: #ef4444;
-      --success: #22c55e;
     }
 
     * {
@@ -36,8 +34,6 @@
       overflow-x: hidden;
     }
 
-    /* ANIMATIONS DE BASE */
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -45,7 +41,7 @@
 
     @keyframes glowPulse {
       0% { box-shadow: 0 0 12px rgba(168, 85, 247, 0.6); }
-      50% { box-shadow: 0 0 24px rgba(232, 121, 249, 0.9); }
+      50% { box-shadow  : 0 0 24px rgba(232, 121, 249, 0.9); }
       100% { box-shadow: 0 0 12px rgba(168, 85, 247, 0.6); }
     }
 
@@ -58,8 +54,6 @@
     section {
       animation: fadeIn 0.9s ease;
     }
-
-    /* HEADER */
 
     header {
       display: flex;
@@ -142,8 +136,6 @@
     .mobile-nav a:hover {
       color: var(--accent-neon);
     }
-
-    /* HERO CYBER SHADOW */
 
     .hero {
       padding: 4.5rem 2rem 3rem;
@@ -307,8 +299,6 @@
       opacity: 0.8;
     }
 
-    /* SECTIONS GÉNÉRALES */
-
     .section {
       padding: 3rem 2rem;
       max-width: 1100px;
@@ -329,13 +319,13 @@
       margin-bottom: 2rem;
     }
 
-    .grid-3, .grid-2, .offers, .testimonials {
+    .grid-3, .grid-2, .offers, .timeline {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
     }
 
-    .card, .offer-card, .faq-item, .testimonial, .timeline-step {
+    .card, .offer-card, .timeline-step {
       background: var(--card-bg);
       backdrop-filter: blur(18px);
       border-radius: 18px;
@@ -346,7 +336,7 @@
       overflow: hidden;
     }
 
-    .card::before, .offer-card::before, .faq-item::before, .testimonial::before, .timeline-step::before {
+    .card::before, .offer-card::before, .timeline-step::before {
       content: "";
       position: absolute;
       inset: 0;
@@ -356,13 +346,13 @@
       pointer-events: none;
     }
 
-    .card:hover, .offer-card:hover, .faq-item:hover, .testimonial:hover, .timeline-step:hover {
+    .card:hover, .offer-card:hover, .timeline-step:hover {
       transform: translateY(-4px);
       border-color: var(--accent-soft);
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
     }
 
-    .card:hover::before, .offer-card:hover::before, .faq-item:hover::before, .testimonial:hover::before, .timeline-step:hover::before {
+    .card:hover::before, .offer-card:hover::before, .timeline-step:hover::before {
       opacity: 1;
     }
 
@@ -372,48 +362,10 @@
       font-size: 1.1rem;
     }
 
-    .card p, .offer-card p, .faq-item p, .testimonial {
+    .card p, .offer-card p, .timeline-step p {
       color: var(--text-soft);
       font-size: 0.95rem;
     }
-
-    .offer-card a {
-      display: inline-block;
-      margin-top: 0.8rem;
-      text-decoration: none;
-      color: var(--accent-neon);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: 0.25s;
-    }
-
-    .offer-card a:hover {
-      text-shadow: 0 0 12px rgba(168, 85, 247, 0.9);
-      transform: translateY(-1px);
-    }
-
-    /* TIMELINE */
-
-    .timeline {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 1rem;
-    }
-
-    .timeline-step h3 {
-      margin-top: 0;
-      color: var(--accent-soft);
-      font-size: 1rem;
-    }
-
-    .timeline-step span {
-      font-size: 0.75rem;
-      color: var(--accent-neon);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    /* SOCIALS */
 
     .socials {
       text-align: center;
@@ -448,8 +400,6 @@
       fill: var(--accent-soft);
     }
 
-    /* FOOTER */
-
     footer {
       padding: 2rem;
       text-align: center;
@@ -465,12 +415,9 @@
       color: var(--accent-neon);
     }
 
-    /* RESPONSIVE */
-
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: minmax(0, 1fr);
-        text-align: left;
       }
       .hero-right {
         margin-top: 1.5rem;
@@ -544,21 +491,20 @@
 
 <main>
 
-  <!-- HERO -->
   <section id="accueil" class="hero">
     <div class="hero-left">
-      <h1>Lamoney — Univers d’opportunités & de communauté.</h1>
-      <p>Lamoney rassemble une communauté autour d’opportunités Hacoo, de codes exclusifs et d’un univers mystérieux mais clair. Ici, pas de promesses irréalistes, juste des informations, des outils et des accès.</p>
+      <h1>Lamoney — Opportunités & communauté Hacoo.</h1>
+      <p>Lamoney présente des opportunités liées à Hacoo et rassemble une communauté autour d’informations, de codes et d’échanges. Le but est de centraliser les accès et de rendre les choses simples à suivre.</p>
 
       <div class="hero-badges">
         <div class="badge">Communauté active</div>
         <div class="badge">Codes exclusifs</div>
-        <div class="badge">Univers Lamoney</div>
+        <div class="badge">Infos centralisées</div>
       </div>
 
       <div class="hero-cta">
         <a class="btn-primary" href="https://t.me/lamoneyhacoo" target="_blank">
-          🔮 Rejoindre le Telegram Lamoney
+          🔗 Rejoindre le Telegram Lamoney
         </a>
         <a class="btn-secondary" href="#reseaux">
           Voir les réseaux Lamoney
@@ -567,88 +513,84 @@
     </div>
 
     <div class="hero-right">
-      <p>Lamoney fonctionne comme une porte d’entrée vers un univers d’opportunités, de discussions et de codes. Tu choisis ton niveau d’implication, à ton rythme.</p>
+      <p>Lamoney est un point de départ pour suivre les informations, les codes et les annonces liées à Hacoo. Chacun peut suivre à son rythme et décider de ce qui l’intéresse.</p>
       <div class="levels">
         <div class="level-card">
           <div class="level-tag">Niveau 1</div>
           <h3>Découverte</h3>
-          <p>Tu rejoins le Telegram, tu observes, tu prends tes repères.</p>
+          <p>Tu rejoins le Telegram, tu regardes les infos et tu prends tes repères.</p>
         </div>
         <div class="level-card">
           <div class="level-tag">Niveau 2</div>
-          <h3>Participation</h3>
-          <p>Tu suis les infos, tu utilises le code Lamoney, tu échanges.</p>
+          <h3>Suivi</h3>
+          <p>Tu suis les annonces, tu utilises le code Lamoney quand c’est utile pour toi.</p>
         </div>
         <div class="level-card">
           <div class="level-tag">Niveau 3</div>
-          <h3>Implication</h3>
-          <p>Tu deviens actif dans la communauté, tu explores plus loin.</p>
+          <h3>Participation</h3>
+          <p>Tu échanges avec la communauté et tu t’impliques davantage dans les discussions.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONCEPT -->
   <section id="concept" class="section">
     <h2>Le concept Lamoney</h2>
-    <p class="section-subtitle">Un univers construit autour de trois axes : communauté, opportunités, clarté.</p>
+    <p class="section-subtitle">Lamoney sert à regrouper les informations, les codes et les accès liés à Hacoo, dans un format simple.</p>
 
     <div class="grid-3">
       <div class="card">
-        <h3>Communauté</h3>
-        <p>Lamoney n’est pas juste un lien ou un code. C’est une communauté qui échange, observe, et avance ensemble.</p>
+        <h3>Centralisation</h3>
+        <p>Les informations importantes sont regroupées au même endroit pour éviter de chercher partout.</p>
       </div>
       <div class="card">
-        <h3>Opportunités</h3>
-        <p>Les opportunités sont mises en avant progressivement, avec une approche simple : tu vois, tu décides.</p>
+        <h3>Communauté</h3>
+        <p>Les membres peuvent suivre les annonces, poser des questions et échanger entre eux.</p>
       </div>
       <div class="card">
         <h3>Clarté</h3>
-        <p>Pas de promesses de gains garantis. Pas de pression. Juste des infos, des accès, et des outils.</p>
+        <p>Les messages sont pensés pour être simples à comprendre, sans promesses exagérées.</p>
       </div>
     </div>
   </section>
 
-  <!-- OFFRES (placeholder sans lien Hacoo pour l’instant) -->
   <section id="offres" class="section">
     <h2>Offres Lamoney</h2>
-    <p class="section-subtitle">Cette section sera dédiée aux offres Hacoo liées à Lamoney. Elle est prête à accueillir ton lien dès que tu l’auras.</p>
+    <p class="section-subtitle">Cette section sera utilisée pour présenter les offres Hacoo liées à Lamoney dès que le lien sera disponible.</p>
 
     <div class="offers">
       <div class="offer-card">
         <h3>Page Hacoo Lamoney</h3>
-        <p>Lorsque ton lien Hacoo sera prêt, il sera affiché ici, avec une présentation claire et un bouton d’accès.</p>
+        <p>Lorsque le lien Hacoo officiel sera prêt, il sera affiché ici avec un bouton d’accès et une présentation claire.</p>
         <p style="font-size:0.85rem; color:var(--text-soft); margin-top:0.6rem;">
-          Pour l’instant, cette section est en attente de ton lien Hacoo officiel.
+          En attendant, cette section reste prête à accueillir les informations liées aux offres.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- CODE PROMO -->
   <section id="code" class="section">
     <h2>Code Promo Lamoney</h2>
-    <p class="section-subtitle">Un code simple, clair, à utiliser sur Hacoo pour bénéficier d’une réduction.</p>
+    <p class="section-subtitle">Un code simple à utiliser sur les offres compatibles pour bénéficier d’une réduction.</p>
 
     <div class="grid-2">
       <div class="card">
         <h3>Code : <span style="color:var(--accent-neon);">lamoney</span></h3>
-        <p>Ce code permet de bénéficier de <strong>-14%</strong> de réduction sur les offres compatibles.</p>
+        <p>Ce code permet de bénéficier de <strong>-14%</strong> de réduction sur les offres compatibles Hacoo.</p>
         <p style="font-size:0.85rem; color:var(--text-soft); margin-top:0.6rem;">
-          Les conditions d’utilisation dépendent des offres Hacoo. Lamoney ne garantit aucun résultat, seulement l’accès à une réduction.
+          Les conditions d’utilisation dépendent des offres Hacoo. Lamoney ne garantit aucun résultat, il donne simplement accès à une réduction.
         </p>
       </div>
       <div class="card">
-        <h3>Utilisation responsable</h3>
-        <p>Le code Lamoney est un outil. Tu restes libre de l’utiliser ou non, en fonction de ce que tu juges pertinent.</p>
+        <h3>Utilisation libre</h3>
+        <p>Tu restes libre d’utiliser ou non le code Lamoney, en fonction de ce que tu juges utile pour toi.</p>
       </div>
     </div>
   </section>
 
-  <!-- RÉSEAUX LAMONEY -->
   <section id="reseaux" class="section socials">
     <h2>Réseaux Lamoney</h2>
-    <p class="section-subtitle">Lamoney est présent sur plusieurs plateformes pour partager, expliquer et échanger.</p>
+    <p class="section-subtitle">Lamoney est présent sur plusieurs plateformes pour partager les informations et les contenus.</p>
 
     <a class="social-btn" href="https://t.me/lamoneyhacoo" target="_blank">
       <svg viewBox="0 0 24 24"><path d="M9.999 15.17l-.01.01-.01-.01-2.83-2.83-1.41 1.41 4.24 4.24 8.49-8.49-1.41-1.41z"/></svg>
@@ -671,15 +613,14 @@
     </a>
   </section>
 
-  <!-- PARTENAIRES / FRBONPLAN -->
   <section id="partenaires" class="section">
     <h2>Communautés partenaires</h2>
-    <p class="section-subtitle">Lamoney n’est pas seul. D’autres communautés existent dans le même univers, comme Frbonplan.</p>
+    <p class="section-subtitle">D’autres canaux existent dans le même univers, comme Frbonplan.</p>
 
     <div class="grid-2">
       <div class="card">
         <h3>Frbonplan — Canal partenaire</h3>
-        <p>Frbonplan est un autre canal qui partage des opportunités et des bons plans, dans un style différent mais complémentaire.</p>
+        <p>Frbonplan est un canal qui partage des opportunités et des bons plans, avec son propre style.</p>
         <a class="social-btn" href="https://t.me/promohacoo" target="_blank">
           <svg viewBox="0 0 24 24"><path d="M9.999 15.17l-.01.01-.01-.01-2.83-2.83-1.41 1.41 4.24 4.24 8.49-8.49-1.41-1.41z"/></svg>
           Telegram Frbonplan
@@ -687,7 +628,7 @@
       </div>
       <div class="card">
         <h3>Site Frbonplan</h3>
-        <p>Frbonplan dispose également d’un site vitrine, qui présente ses opportunités et son univers.</p>
+        <p>Frbonplan dispose d’un site vitrine qui présente ses informations et ses accès.</p>
         <a class="social-btn" href="https://frbonplan.github.io/Frbonplan/" target="_blank">
           <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/></svg>
           Site Frbonplan
@@ -696,30 +637,29 @@
     </div>
   </section>
 
-  <!-- FAQ -->
   <section id="faq" class="section">
     <h2>FAQ — Questions fréquentes</h2>
 
     <div class="timeline">
       <div class="timeline-step">
         <span>01</span>
-        <h3>Lamoney est-il gratuit ?</h3>
-        <p>Oui. L’accès au Telegram Lamoney est gratuit. Les discussions et les informations sont accessibles à tous les membres.</p>
+        <h3>Lamoney est-il payant ?</h3>
+        <p>L’accès au Telegram Lamoney est gratuit. Les informations et les annonces sont accessibles aux membres.</p>
       </div>
       <div class="timeline-step">
         <span>02</span>
-        <h3>Lamoney promet-il des gains ?</h3>
-        <p>Non. Lamoney ne promet aucun gain garanti. Le but est de partager des infos, des accès et des codes, pas des miracles.</p>
+        <h3>Lamoney garantit-il des gains ?</h3>
+        <p>Non. Lamoney ne garantit aucun gain. Le but est de partager des informations, des codes et des accès.</p>
       </div>
       <div class="timeline-step">
         <span>03</span>
         <h3>Comment utiliser le code Lamoney ?</h3>
-        <p>Le code <strong>lamoney</strong> s’utilise sur les offres compatibles. Les détails seront précisés dans les communications Lamoney.</p>
+        <p>Le code <strong>lamoney</strong> s’utilise sur les offres compatibles Hacoo. Les détails sont précisés dans les communications Lamoney.</p>
       </div>
       <div class="timeline-step">
         <span>04</span>
         <h3>Lamoney et Frbonplan sont-ils liés ?</h3>
-        <p>Ce sont deux univers séparés, mais proches. Chacun a son style, ses codes, ses façons de présenter les opportunités.</p>
+        <p>Ce sont deux canaux séparés, avec leurs propres façons de présenter les informations, mais ils peuvent être complémentaires.</p>
       </div>
     </div>
   </section>
@@ -727,7 +667,7 @@
 </main>
 
 <footer>
-  <p>© <span>2026</span> - Lamoney. Univers d’opportunités & de communauté.</p>
+  <p>© <span>2026</span> - Lamoney. Opportunités & communauté Hacoo.</p>
 </footer>
 
 <script>

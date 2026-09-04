@@ -16,6 +16,7 @@
       --text-main: #e5e7eb;
       --text-soft: #9ca3af;
       --border: #1f2937;
+      --success: #22c55e;
     }
 
     * {
@@ -41,7 +42,7 @@
 
     @keyframes glowPulse {
       0% { box-shadow: 0 0 12px rgba(168, 85, 247, 0.6); }
-      50% { box-shadow  : 0 0 24px rgba(232, 121, 249, 0.9); }
+      50% { box-shadow: 0 0 24px rgba(232, 121, 249, 0.9); }
       100% { box-shadow: 0 0 12px rgba(168, 85, 247, 0.6); }
     }
 
@@ -400,6 +401,31 @@
       fill: var(--accent-soft);
     }
 
+    .copy-code {
+      margin-top: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(17, 24, 39, 0.95);
+      color: var(--text-soft);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .copy-code:hover {
+      border-color: var(--accent-neon);
+      color: var(--accent-neon);
+    }
+
+    .copy-code.success {
+      border-color: var(--success);
+      color: var(--success);
+    }
+
     footer {
       padding: 2rem;
       text-align: center;
@@ -580,6 +606,9 @@
         <p style="font-size:0.85rem; color:var(--text-soft); margin-top:0.6rem;">
           Les conditions d’utilisation dépendent des offres Hacoo. Lamoney ne garantit aucun résultat, il donne simplement accès à une réduction.
         </p>
+        <button class="copy-code" onclick="copyCode()">
+          Copier le code
+        </button>
       </div>
       <div class="card">
         <h3>Utilisation libre</h3>
@@ -615,7 +644,7 @@
 
   <section id="partenaires" class="section">
     <h2>Communautés partenaires</h2>
-    <p class="section-subtitle">D’autres canaux existent dans le même univers, comme Frbonplan.</p>
+    <p class="section-subtitle">D’autres canaux existent dans le même univers, chacun avec son style et ses contenus.</p>
 
     <div class="grid-2">
       <div class="card">
@@ -658,8 +687,8 @@
       </div>
       <div class="timeline-step">
         <span>04</span>
-        <h3>Lamoney et Frbonplan sont-ils liés ?</h3>
-        <p>Ce sont deux canaux séparés, avec leurs propres façons de présenter les informations, mais ils peuvent être complémentaires.</p>
+        <h3>Lamoney et Frbonplan</h3>
+        <p>Les deux canaux existent chacun avec leur propre style et leurs propres contenus. Les membres peuvent consulter l’un ou l’autre selon leurs préférences.</p>
       </div>
     </div>
   </section>
@@ -674,6 +703,19 @@
   function toggleMenu() {
     const nav = document.getElementById('mobileNav');
     nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+  }
+
+  function copyCode() {
+    const code = 'lamoney';
+    navigator.clipboard.writeText(code).then(() => {
+      const btn = document.querySelector('.copy-code');
+      btn.classList.add('success');
+      btn.textContent = 'Code copié';
+      setTimeout(() => {
+        btn.classList.remove('success');
+        btn.textContent = 'Copier le code';
+      }, 2000);
+    });
   }
 </script>
 
